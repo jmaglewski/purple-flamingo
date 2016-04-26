@@ -1,0 +1,7 @@
+localize_homepage:
+    path:     /
+    defaults: { _controller: LocalizeBundle:Default:index }
+localize:
+    resource: "@LocalizeBundle/Controller/LocalizeRestController.php"
+    prefix: /api/
+    type: rest

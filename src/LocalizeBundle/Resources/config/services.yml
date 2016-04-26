@@ -1,0 +1,7 @@
+services:
+    google.places:
+        class: LocalizeBundle\Service\GooglePlacesService
+        arguments: ['@service_container']
+    geocode.service:
+        class: LocalizeBundle\Service\GeocodeService
+        arguments: ['@service_container']
