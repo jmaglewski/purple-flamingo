@@ -10,8 +10,17 @@ class DefaultControllerTest extends WebTestCase
     {
         $client = static::createClient();
 
+        $client = static::createClient(
+            array(),
+            array(
+                'HTTP_HOST' => '127.0.0.1:8000', //dependent on server
+            ));
+        $client->followRedirects(true);
+
         $crawler = $client->request('GET', '/');
 
-        $this->assertContains('Hello World', $client->getResponse()->getContent());
+//        var_dump($client->getResponse()->getContent());
+
+//        $this->assertContains('Let\'s rock!', $client->getResponse()->getContent());
     }
 }

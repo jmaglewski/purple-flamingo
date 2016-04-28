@@ -15,4 +15,5 @@ class DefaultController extends Controller
             'place_type' => $this->container->getParameter('place_type'),
         ));
     }
+
 }

@@ -1,0 +1,16 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_host: 127.0.0.1
+    database_port: null
+    database_name: symfony
+    database_user: root
+    database_password: null
+    mailer_transport: smtp
+    mailer_host: 127.0.0.1
+    mailer_user: null
+    mailer_password: null
+    secret: 1c354ccb4f4ed0a618f9ce2a8c1d43b6d14166ce
+    google_api_server_key: AIzaSyAZvsg433xPUeX4CJa7vS1aYyvSWUagaEs
+    google_api_browser_key: AIzaSyAsoTKx69VjDgLDiE3tox8DMYSmF86hJQU
+    place_radius: 2000
+    place_type: bar
