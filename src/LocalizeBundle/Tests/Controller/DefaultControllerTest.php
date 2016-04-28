@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by IntelliJ IDEA.
- * User: jacek.maglewski
- * Date: 28.04.16
- * Time: 08:15
- */
-
 namespace LocalizeBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;

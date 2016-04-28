@@ -10,23 +10,20 @@ class GooglePlacesService
      */
     const ENDPOINT_URL = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?key=%s&location=%s&radius=%s&type=%s';
 
-    /**
-     * @var Container
-     */
-    var $container;
+    var $webClient;
+    var $googleApiServerKey;
 
-    function __construct(Container $container)
+    function __construct($webClient, $googleApiServerKey)
     {
-        $this->container = $container;
+        $this->webClient = $webClient;
+        $this->googleApiServerKey = $googleApiServerKey;
     }
 
     public function searchPlace($location, $radius, $type)
     {
-        $browser = $this->container->get('buzz');
-
         $url = $this->createURL($location, $radius, $type);
 
-        $response = $browser->get($url);
+        $response = $this->webClient->get($url);
 
         if (!$response->isOk()) {
             return null;
@@ -37,7 +34,6 @@ class GooglePlacesService
 
     private function createURL($location, $radius, $type)
     {
-        $googleApiKey = $this->container->getParameter('google_api_server_key');
-        return sprintf($this::ENDPOINT_URL, $googleApiKey, $location, $radius, $type);
+        return sprintf($this::ENDPOINT_URL, $this->googleApiServerKey, $location, $radius, $type);
     }
 }
