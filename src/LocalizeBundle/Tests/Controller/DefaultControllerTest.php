@@ -1,4 +1,10 @@
 <?php
+/**
+ * Created by IntelliJ IDEA.
+ * User: jacek.maglewski
+ * Date: 28.04.16
+ * Time: 08:15
+ */
 
 namespace LocalizeBundle\Tests\Controller;
 
@@ -9,18 +15,11 @@ class DefaultControllerTest extends WebTestCase
     public function testIndex()
     {
         $client = static::createClient();
-
-        $client = static::createClient(
-            array(),
-            array(
-                'HTTP_HOST' => '127.0.0.1:8000', //dependent on server
-            ));
         $client->followRedirects(true);
 
         $crawler = $client->request('GET', '/');
+        $button = $crawler->filter('#start');
 
-//        var_dump($client->getResponse()->getContent());
-
-//        $this->assertContains('Let\'s rock!', $client->getResponse()->getContent());
+        $this->assertEquals('Let\'s rock!', $button->attr('value'));
     }
 }
