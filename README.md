@@ -21,6 +21,9 @@ Parameters can be change in ``` /app/config/parameters.yml ```
 * Installation Symfony2 framework: http://symfony.com/doc/2.8/book/installation.html
 
 ### Running
-* php app/console server:run
+* ``` php app/console server:run ```
 * application is on http://127.0.0.1:8000/
- 
+
+### Tests running
+* ``` cd app ```
+* ``` phpunit ```
